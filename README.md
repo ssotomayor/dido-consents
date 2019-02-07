@@ -7,11 +7,15 @@ yarn
 yarn start
 ```
 
-# Or one-line-it
+### Or one-line-it
 ```
 yarn && yarn start
 ```
 
+And browse to http://localhost:3000 if it doesn't open your browser automatically.
+
+![screenshot](https://i.imgur.com/8jPYkDo.png)
+![screenshot](https://i.imgur.com/bsIQBzd.png)
 ## Running tests
 
 ```
