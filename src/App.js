@@ -1,28 +1,53 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import FourOhFour from './components/FourOhFour';
+import Nav from './components/Nav';
+import LoadingBar from 'react-redux-loading';
+import GiveConsent from './components/GiveConsent';
+import Helmet from 'react-helmet';
+import { handleInitialData } from './actions/';
+import ConsentsList from './components/ConsentsList';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+	componentDidMount() {
+		this.props.dispatch(handleInitialData())
+	}
+
+	render() {
+		return (
+			<Router>
+				<Fragment>
+					<Nav />
+					<LoadingBar /> 
+					<div className="App">
+					<Helmet>
+						<style>{'body { background-color: #333333 }'}</style>
+					</Helmet>
+							{
+							this.props.loading === true 
+							? null
+							: <Fragment>
+								<Switch>
+									<Route exact path='/give-consent' component={GiveConsent} />
+									<Route exact path='/consents' component={ConsentsList} />
+									<Route component={FourOhFour} />
+								</Switch>
+							</Fragment>
+							}
+					</div>
+				</Fragment>
+			</Router>
+		)
+	}
 }
 
-export default App;
+const mapStateToProps = () => {
+	return {
+		loading: false
+	}
+}
+
+export default connect(mapStateToProps)(App)

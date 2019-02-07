@@ -1,0 +1,20 @@
+[
+	{
+		"id": "12345",
+		"name": "Soto",
+		"email": "soto@soto.com",
+		"consentFor": ["newsletters", "visits", "targetedAds"]
+	},
+	{
+		"id": "12345",
+		"name": "asfd",
+		"email": "asf@asdf.com",
+		"consentFor": ["newsletters", "visits", "targetedAds"]
+	},	
+	{
+		"id": "123456",
+		"name": "jtrjty",
+		"email": "ntyjtj@jtjtyjtyj.com",
+		"consentFor": ["newsletters", "visits", "targetedAds"]
+	}
+]
