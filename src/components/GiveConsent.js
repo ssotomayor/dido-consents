@@ -97,7 +97,7 @@ class GiveConsent extends Component {
 					!this.state.targetedAds &&
 					!this.state.visits
 					)} type="submit" style={{width: '80%', background: '#47ad53', borderRadius: '4px'}}>
-						Submit
+						Give Consent
 					</Button>
 				</form>
 			</Paper>
