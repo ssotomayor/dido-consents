@@ -37,25 +37,28 @@ const theme = getTheme({
 	paletteType: 'dark',
 })
 
-it('renders without crashing', () => {
-	const div = document.createElement('div');
-	ReactDOM.render(
-		<Provider store={store}>
-		<MuiThemeProvider theme={theme}>
-		<App />
-		</MuiThemeProvider></Provider>, div)
-	ReactDOM.unmountComponentAtNode(div);
-});
-
-configure({adapter: new Adapter()});
-test('Initial state of GiveConsent should be empty string and false', () => {
+describe('Components Tests', () => {
+	it('renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(
+			<Provider store={store}>
+			<MuiThemeProvider theme={theme}>
+			<App />
+			</MuiThemeProvider></Provider>, div)
+		ReactDOM.unmountComponentAtNode(div);
+	});
 	
-	// Using .WrappedComponent as this component is wrapped within withRouter
-	const wrapper = shallow(<GiveConsent.WrappedComponent />);
-
-	expect(wrapper.state().name).toEqual('');
-	expect(wrapper.state().email).toEqual('');
-	expect(wrapper.state().newsletters).toEqual(false);
-	expect(wrapper.state().visits).toEqual(false);
-	expect(wrapper.state().targetedAds).toEqual(false);
-});
+	configure({adapter: new Adapter()});
+	test('Initial state of GiveConsent should be empty string and false', () => {
+		
+		// Using .WrappedComponent as this component is wrapped within withRouter
+		// Enzyme allows you to easily mount a React component
+		const wrapper = shallow(<GiveConsent.WrappedComponent />);
+	
+		expect(wrapper.state().name).toEqual('');
+		expect(wrapper.state().email).toEqual('');
+		expect(wrapper.state().newsletters).toEqual(false);
+		expect(wrapper.state().visits).toEqual(false);
+		expect(wrapper.state().targetedAds).toEqual(false);
+	});
+})

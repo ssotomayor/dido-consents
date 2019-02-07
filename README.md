@@ -7,6 +7,11 @@ yarn
 yarn start
 ```
 
+# Or one-line-it
+```
+yarn && yarn start
+```
+
 ## Running tests
 
 ```
