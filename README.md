@@ -14,7 +14,11 @@ yarn && yarn start
 
 And browse to http://localhost:3000 if it doesn't open your browser automatically.
 
+/give-consent
 ![screenshot](https://i.imgur.com/8jPYkDo.png)
+
+
+/consents
 ![screenshot](https://i.imgur.com/bsIQBzd.png)
 ## Running tests
 
