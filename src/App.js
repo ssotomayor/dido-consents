@@ -33,6 +33,7 @@ class App extends Component {
 								<Switch>
 									<Route exact path='/give-consent' component={GiveConsent} />
 									<Route exact path='/consents' component={ConsentsList} />
+									<Route exact path='/' component={ConsentsList} />
 									<Route component={FourOhFour} />
 								</Switch>
 							</Fragment>

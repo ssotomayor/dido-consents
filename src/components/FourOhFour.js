@@ -1,3 +1,4 @@
+import '../App.css';
 import React from 'react'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
@@ -6,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 function FourOhFour() {
 	return (
-		<Paper style={{width: '50%', textJustify:'center', textAlign:'center', margin:'5% auto', padding: '5%'}}>
+		<Paper className='mainPaperWrapper'>
 			<Typography color="primary">404. Oops! Wrong URL ? </Typography>
 
 			<Button component={Link} to="/give-consent">
