@@ -28,4 +28,6 @@ yarn test
 
 Styles and tests are very basic. Also eventually this could be improved by using [Sagas](https://github.com/redux-saga/redux-saga) instead of [Thunks](https://github.com/reduxjs/redux-thunk).
 
+The app is using [fake-fetch](https://www.npmjs.com/package/fake-fetch) to mock the `fetch` requests from the browser and avoid doing them.
+
 Enjoy.
